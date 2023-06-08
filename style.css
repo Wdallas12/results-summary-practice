@@ -1,0 +1,269 @@
+/* ------ RESETS -------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0;
+}
+html, body{
+    height: 100%;
+}
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+input, button, textarea, select {
+    font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+#root, #__next {
+    isolation: isolate;
+}
+
+:root {
+    --light-red: hsl(0, 100%, 67%);
+    --pale-red: hsla(0, 100%, 67%, .1);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --pale-orangey-yellow: hsla(39, 100%, 56%, .1);
+    --green-teal: hsl(166, 100%, 37%);
+    --pale-green-teal: hsla(166, 100%, 37%, .1);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --pale-cobalt-blue: hsla(234, 85%, 45%, .1);
+    --light-slate-blue: hsla(252, 100%, 67%, .7);
+    --light-royal-blue: hsl(241, 81%, 54%);
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --pale-lavender: hsla(241, 100%, 89%, .4);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+    --pale-dark-gray-blue: hsla(224, 30%, 27%, .6);
+}
+
+/* ------- TYPOGRAPHY -------- */
+html {
+    font-size: 62.5%;
+    text-align: center;
+    font-family: "Hanken Grotesk", Helvetica, sans-serif;
+}
+h2, main a {
+    font-size: 2rem;
+}
+#avgScore {
+    font-size: 6rem;
+    font-weight: 800;
+}
+.results > div > span, p, .catScores {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+h3 {
+    font-size: 2.7rem;
+    font-weight: 700;
+}
+.summary > div > span {
+    color: var(--light-slate-blue);
+}
+
+/* --------- LAYOUT ------- */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.results {
+    padding: 8% 10%;
+}
+.focalPt {
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    margin: 2.5rem 0;
+}
+h3 {
+    padding-bottom: .75rem;
+}
+.summary > h2 {
+    text-align: left;
+    padding-top: 1rem;
+    color: var(--dark-gray-blue)
+}
+.catScores {
+    display: flex;
+    justify-content: space-between;
+}
+#catOne > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--light-red);
+}
+#catTwo > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--orangey-yellow);
+}
+#catThree > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--green-teal);
+}
+#catFour > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    color: var(--cobalt-blue);
+}
+.attribution {
+    display: none;
+}
+
+/* -------- DESIGN ---------- */
+.results {
+    background-color: var(--cobalt-blue);
+    background-image: linear-gradient(var(--pale-lavender), var(--cobalt-blue) 50%);
+    border-radius: 0 0 30px 30px;
+    color: hsla(241, 100%, 89%, .8);
+}
+.focalPt {
+    background-image: linear-gradient(var(--pale-dark-gray-blue), 35%, var(--cobalt-blue));
+    border-radius: 50%;
+    align-self: center;
+    width: 14.5rem;
+}
+#avgScore, h3 {
+    color: white;
+}
+.summary {
+    margin: 0 5%;
+}
+.summary > h2, .catScores, .summary > a {
+    margin: 1rem 10%; 
+}
+.catScores {
+    background-color: var(--pale-red);
+    padding: 1.75rem;
+    border-radius: 10px;
+}
+.button {
+    background-color: var(--dark-gray-blue);
+    padding: 1.5rem 2rem;
+    border-radius: 50px;
+    color: white;
+    font-weight: 700;
+}
+#catTwo {
+    background-color: var(--pale-orangey-yellow);
+}
+#catThree {
+    background-color: var(--pale-green-teal);
+}
+#catFour {
+    background-color: var(--pale-cobalt-blue);
+}
+.indivScores {
+    color: var(--dark-gray-blue)
+}
+
+/* ------- MEDIA QUERIES ------- */
+@media only screen and (min-width: 1440px){
+    main {
+       position: absolute;
+       top: 50%;
+       left: 50%;
+       transform: translateX(-50%) translateY(-50%);
+    }
+    main {
+        flex-direction: row;
+        border-radius: 25px;
+        width: fit-content;
+        height: fit-content;
+        flex-basis: 50%;
+        box-shadow: var(--pale-blue) 10px 15px 30px;
+    }
+    .results {
+        border-radius: 25px;
+        max-width: 47%;
+        padding: 4rem 4.25rem;
+    }
+    .focalPt {
+        padding: 4rem;
+        width: 17.5rem;
+    }
+    .summary {
+        margin: 1.5rem 1rem;
+        align-self: stretch;
+        gap: .25rem;
+    }
+    .catScores {
+        margin: .5rem 3rem;
+        padding: 1.5rem 2rem;
+    }
+    #catFour {
+        margin-bottom: 2rem;
+    }
+    .button {
+        padding: 1rem 3rem;
+        margin-top: 4rem;
+    }
+}
+
+
+
+/* ## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Light red: hsl(0, 100%, 67%)
+- Orangey yellow: hsl(39, 100%, 56%)
+- Green teal: hsl(166, 100%, 37%)
+- Cobalt blue: hsl(234, 85%, 45%)
+
+## Gradients
+
+- Light slate blue (background): hsl(252, 100%, 67%)
+- Light royal blue (background): hsl(241, 81%, 54%)
+
+- Violet blue (circle): hsla(256, 72%, 46%, 1)
+- Persian blue (circle): hsla(241, 72%, 46%, 0)
+
+
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Pale blue: hsl(221, 100%, 96%)
+- Light lavender: hsl(241, 100%, 89%)
+- Dark gray blue: hsl(224, 30%, 27%)
+
+### Notes
+
+Use transparency to get the colour variations necessary to match the design. Hint: look into using `hsla()`.
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraphs): 18px
